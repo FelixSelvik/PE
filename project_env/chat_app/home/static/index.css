@@ -1,0 +1,11 @@
+h1{
+    text-align:center;
+    color:white;
+    padding-top: 200px;
+    
+}
+
+html{
+    background: url(images/background.jpg);
+    background-size: cover;
+}
