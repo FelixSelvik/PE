@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <title>Login</title>
+   <title>Chat App</title>
    {% load static %}
-   <link rel="stylesheet" type="text/css" href="{% static 'login.css'%}"/>
+   <link rel="stylesheet" type="text/css" href="{% static 'index.css'%}"/>
 </head>
 <body>
-  <h1>Login</h1>
+  <div id="background">
+  <nav class="navbar">
+    <a href="" class="logo">
+      <img src="../../static/images/logo.png" alt="logo" class="icon">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="#">Chat 1</a></li>
+      <li class="nav-item"><a href="#">Chat 2</a></li>
+      <li class="nav-item"><a href="#">Chat 3</a></li>
+      <li class="nav-item"><a href="#">Log out</a></li>
+    </ul>
+  </nav>
+  </div>
 </body>
 </html>
