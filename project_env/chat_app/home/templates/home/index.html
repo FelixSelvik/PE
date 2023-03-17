@@ -13,11 +13,18 @@
       <img src="../../static/images/logo.png" alt="logo" class="icon">
     </a>
     <ul class="nav-links">
-      <li class="nav-item"><a href="#">Chat 1</a></li>
-      <li class="nav-item"><a href="#">Chat 2</a></li>
-      <li class="nav-item"><a href="#">Chat 3</a></li>
-      <li class="nav-item"><a href="{% url 'login' %}">Login</a></li>
-      <li class="nav-item"><a href="{% url 'signup' %}">Sign up</a></li>
+      
+      <div class="dropdown-div">
+        <button class="drop-button">Rooms</button>
+          <div class="dropdown-items">
+            <a href="#" class="rooms">Room1</a>
+            <a href="#" class="rooms">Room2</a>
+            <a href="#" class="rooms">Room3</a>
+          </div>
+      </div>
+      
+      <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
+      <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
     </ul>
   </nav>
   </div>
