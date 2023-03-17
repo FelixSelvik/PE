@@ -13,23 +13,18 @@
       <img src="../../static/images/logo.png" alt="logo" class="icon">
     </a>
     <ul class="nav-links">
-      {% if request.user.is_authenticated %}
-        <div class="dropdown-div">
-          <button class="drop-button">Rooms</button>
-            <div class="dropdown-items">
-              <a href="#" class="rooms">Room1</a>
-              <a href="#" class="rooms">Room2</a>
-              <a href="#" class="rooms">Room3</a>
-            </div>
-        </div>
-
-        <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
-      {% else %}
-
-
+      
+      <div class="dropdown-div">
+        <button class="drop-button">RoomsTEST</button>
+          <div class="dropdown-items">
+            <a href="#" class="rooms">Room1</a>
+            <a href="#" class="rooms">Room2</a>
+            <a href="#" class="rooms">Room3</a>
+          </div>
+      </div>
+      
       <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
       <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
-      {% endif %}
     </ul>
   </nav>
   </div>

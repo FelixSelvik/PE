@@ -12,8 +12,46 @@
     <a href="" class="logo">
       <img src="../../static/images/logo.png" alt="logo" class="icon">
     </a>
-    
+    <ul class="nav-links">
+      
+      <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
+    </ul>
   </nav>
+
+  
+    <form method="post" action="." class="signup-form">
+      {% csrf_token %}
+
+      <div>
+        <label>Username</label>
+        <input type="text" name="username">
+      </div>
+
+      <div>
+        <label>Password</label>
+
+        <input type="password" name="password1">
+      </div>
+
+      <div>
+        <label>Repeat password</label>
+
+        <input type="password" name="password2">
+      </div>
+
+      {% if form.errors %}
+        {% for field in form %}
+          {% for error in field.errors %}
+            <div>
+              <p>{{ error|escape }}</p>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      {% endif %}
+
+      <button>Submit</button>
+    </form>
+  
   </div>
 </body>
 </html>
