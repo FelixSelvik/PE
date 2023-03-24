@@ -22,7 +22,7 @@
               <a href="#" class="rooms">Room3</a>
             </div>
         </div>
-
+        <li class="username"><a href="">{{ user.username }}</a></li>
         <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
       {% else %}
 
@@ -33,5 +33,14 @@
     </ul>
   </nav>
   </div>
+  {% if request.user.is_authenticated %}
+  <div class="chat">
+    
+  </div>
+  {% else %}
+  <div class="fakechat">
+    <img src="../../static/images/intro.png" alt="intro" class="intro">
+  </div>
+  {% endif %}
 </body>
 </html>

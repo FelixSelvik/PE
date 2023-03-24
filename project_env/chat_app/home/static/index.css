@@ -12,7 +12,11 @@ body{
 }
  
 .background{
-    background-color:#282b4a;
+    background-color:#8c70c6;
+}
+
+.fakechat{
+    text-align: center;
 }
 
 ul{

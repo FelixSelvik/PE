@@ -4,54 +4,60 @@
    <meta charset="UTF-8">
    <title>Chat App</title>
    {% load static %}
-   <link rel="stylesheet" type="text/css" href="{% static 'index.css'%}"/>
+   <link rel="stylesheet" type="text/css" href="{% static 'signup.css'%}"/>
 </head>
 <body>
   <div id="background">
   <nav class="navbar">
-    <a href="{% url 'home' %}" class="logo">
+    <a href="" class="logo">
       <img src="../../static/images/logo.png" alt="logo" class="icon">
     </a>
     <ul class="nav-links">
-      
-      <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
     </ul>
   </nav>
 
-  
+  <div class="form">
+    
     <form method="post" action="." class="signup-form">
       {% csrf_token %}
+      
+      <div class="internal-form">
+        <div class="label-div">
+          <label class="signup">Sign up</label>
+        </div>
+    
+        
 
-      <div>
-        <label>Username</label>
-        <input type="text" name="username">
-      </div>
+        <div class="inputs">
+          <input type="text" name="username" class="username" placeholder="Username">
+        </div>
 
-      <div>
-        <label>Password</label>
+        <div class="inputs">
+          <input type="password" name="password1" class="password1" placeholder="Password">
+        </div>
 
-        <input type="password" name="password1">
-      </div>
-
-      <div>
-        <label>Repeat password</label>
-
-        <input type="password" name="password2">
-      </div>
+        <div class="inputs">
+          <input type="password" name="password2" class="password2" placeholder="Repeat Password">
+        </div>
 
       {% if form.errors %}
         {% for field in form %}
           {% for error in field.errors %}
             <div>
-              <p>{{ error|escape }}</p>
+              <p class="error">{{ error|escape }}</p>
             </div>
           {% endfor %}
         {% endfor %}
       {% endif %}
 
-      <button>Submit</button>
+      <button class="submit-button">Submit</button>
+      <p class="login-text">Already have an account?</p>
+      <p class="login-link"><a href="{% url 'login' %}">Login</a></p>
+
+      </div>
     </form>
   
+  </div>
   </div>
 </body>
 </html>
