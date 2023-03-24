@@ -9,7 +9,7 @@
 <body>
   <div id="background">
   <nav class="navbar">
-    <a href="" class="logo">
+    <a href="{% url 'home' %}" class="logo">
       <img src="../../static/images/logo.png" alt="logo" class="icon">
     </a>
     <ul class="nav-links">
@@ -50,7 +50,7 @@
         {% endfor %}
       {% endif %}
 
-      <button class="submit-button">Submit</button>
+      <button class="submit-button">Register</button>
       <p class="login-text">Already have an account?</p>
       <p class="login-link"><a href="{% url 'login' %}">Login</a></p>
 

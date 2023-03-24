@@ -132,30 +132,22 @@ input{
     margin-top:40px;
     margin-bottom:20px;
     font-size:30px;
-
 }
+
+input:focus::placeholder {
+    color: transparent;
+  }
 
 .submit-button{
     width:25%;
     padding-top:10px;
     padding-bottom:10px;
-    font-size:20px;
+    font-size:25px;
     background-color:#a873fd;
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-top:40px;
     margin-bottom:40px;
-}
-
-.login-button{
-    width:60%;
-    padding-top:10px;
-    padding-bottom:10px;
-    font-size:20px;
-    background-color:#a873fd;
-    color:white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top:10px;
 }
 
 .submit-button:hover{
@@ -172,10 +164,10 @@ input{
     padding-top:30px;
 }
 
-.signup,.login{
+.signup{
     padding-left:50px;
-    padding-right:50px;   
-    
+    padding-right:50px;
+    font-size:45px;
 }
 
 .login-link{
