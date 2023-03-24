@@ -11,18 +11,6 @@ body{
     background-color:#845dc4;
 }
  
-/*
-#background{
-    background-image: url(images/background.jpg);
-    background-size: cover;
-    width: 100vw;
-    height: 100vh; 
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
-}
-*/
-
 .background{
     background-color:#282b4a;
 }
@@ -63,7 +51,7 @@ a:active{
     display: flex;
 }
 
-.nav-links a{
+.link-style{
     padding-right:60px;
     padding-left:60px;
 }
@@ -83,6 +71,50 @@ nav{
     height:50px;
     padding-left:100px;
 }
+
+/*dropdown css */
+.drop-button{
+    background-color:#282b4a;
+    color:white;
+    padding-right:60px;
+    padding-left:60px;
+    font-size:30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor:pointer;
+	border: none;
+    text-align:center;
+    
+}
+
+.dropdown-items{
+    display:none;
+    position:absolute;
+    background-color:#282b4a;
+    z-index:1;
+    padding-top:14%;
+    margin-left:43px;
+    margin-right:50px;
+}
+
+.dropdown-items a:hover{
+    background-color:white;
+}
+
+.dropdown-div:hover .dropdown-items{
+    display:block;
+}
+
+
+.dropdown-div{
+    position:relative;
+    display:block;
+}
+
+.rooms{
+    display:block;
+    padding:15px;
+}
+
 
 
 
