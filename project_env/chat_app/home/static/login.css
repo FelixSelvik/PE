@@ -1,7 +1,6 @@
 h1{
     text-align:center;
     color:white;
-    padding-top: 200px;
     
 }
 
@@ -93,6 +92,49 @@ form,h2{
     text-align:center;
 }
 
+.login-button{
+    width:25%;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:25px;
+    background-color:#a873fd;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:40px;
+    margin-bottom:40px;
+    min-width: fit-content;
+}
+
+.login-button:hover{
+    background-color:rgb(132, 14, 228);
+}
+
+.form{
+    text-align:center;
+    margin-top:5%;
+    margin-left:30%;
+    margin-right:30%;
+    margin-bottom:5%;
+    padding-bottom: 5%;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:35px;
+    background-color:#282b4a;
+    border:1px solid #282b4a;
+    border-radius:1%;
+    min-width: fit-content;
+}
+
+input{
+    width:60%;
+    margin-top:40px;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
 
 
 

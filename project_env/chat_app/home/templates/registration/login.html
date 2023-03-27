@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <title>Chat App</title>
-   {% load static %}
-   <link rel="stylesheet" type="text/css" href="{% static 'login.css'%}"/>
+  <meta charset="UTF-8">
+  <title>Chat App - Login</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css'%}" />
 </head>
+
 <body>
   <div id="background">
-  <nav class="navbar">
-    <a href="{% url 'home' %}" class="logo">
-      <img src="../../static/images/logo.png" alt="logo" class="icon">
-    </a>
-    
-  </nav>
+    <nav class="navbar">
+      <a href="{% url 'home' %}" class="logo">
+        <img src="../../static/images/logo.png" alt="logo" class="icon">
+      </a>
 
- <div class="login">
-   <h2>Login</h2>
-  
-    <form method="post">
-      {% csrf_token %}
-      <table>
-        {{ form.as_p }}
-        <tr>
-          <td>&nbsp;</td>
-          <td><input type="submit" value="Submit" class="submit"></td>
-        </tr>                
-      </table>
-    </form>
- </div> 
-  
+    </nav>
+
+    <div class="login">
+      <form method="post">
+        {% csrf_token %}
+        <div class="form">
+          <h1>Login</h1>
+          <input type="text" name="username" class="username" placeholder="Username">
+          <input type="password" name="password" class="password" placeholder="Password">
+          <br>
+          <button class="login-button">Sign in</button>
+          <p class="login-text">Don't have an account yet?</p>
+          <p class="login-link"><a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+
 
   </div>
 </body>
+
 </html>
