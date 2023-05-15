@@ -136,6 +136,11 @@ input:focus::placeholder {
     color: transparent;
   }
 
+.error{
+    color:red;
+    font-size:20px;
+}
+
 
 
 

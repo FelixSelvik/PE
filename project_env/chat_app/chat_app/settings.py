@@ -34,6 +34,7 @@ LOGIN_URL = '/login'
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "home.apps.HomeConfig",
-    "user.apps.UserConfig"
-    
+    "user.apps.UserConfig",
+    "channels",
 ]
+
+ASGI_APPLICATION = 'chat_app.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
