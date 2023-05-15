@@ -2,7 +2,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
-from .models import Room
+
 
 def home(request):
   return render(request, 'home/index.html')
@@ -24,6 +24,9 @@ def signup(request):
     form = SignUpForm()
 
   return render(request, 'registration/signup.html', {'form':form})
+
+def room(request, room_name):
+  return render(request, "rooms/room.html", {"room_name": room_name})
   
 
 
