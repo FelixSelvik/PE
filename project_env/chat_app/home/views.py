@@ -19,7 +19,7 @@ def signup(request):
 
       auth_login(request, user)
 
-      return redirect('home')
+      return redirect('http://127.0.0.1:8000/home/room.html')
   else:
     form = SignUpForm()
 
@@ -27,6 +27,8 @@ def signup(request):
 
 def room(request, room_name):
   return render(request, "rooms/room.html", {"room_name": room_name})
+  
+
   
 
 
