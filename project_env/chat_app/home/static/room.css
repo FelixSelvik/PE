@@ -143,20 +143,23 @@ nav{
 }
 
 textarea {
-    color:darkgoldenrod;
     resize: none;
-    background-color:palegreen;
+    background-color:black;
+    color: white;
 }
 
 #chat-message-input {
-    background-color: lightblue;
-    color:darkgreen;
+    background-color: black;
+    color: white;
     margin: 1%;
+    margin-top: 2%;
     width: 25%;
 }
 
-#chat-message-submit {
-    background-color: brown ;
+.button {
+    background-color: black ;
+    padding-left: 1%;
+    padding-right: 1%;
     color: white;
 }
 
@@ -165,8 +168,24 @@ input, textarea{
 }
 
 label {
-    color: darkblue;
+    color: white;
     font-weight: bold;
+}
+
+footer {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #282b4a;
+    color: white;
+    border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: fit-content;
 }
 
 

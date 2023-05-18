@@ -15,14 +15,17 @@
       <a href="{% url 'home' %}" class="logo">
         <img src="../../static/images/logo.png" alt="logo" class="icon">
       </a>
-
+      <ul class="nav-links">
+        <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+        <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
+      </ul>
     </nav>
 
     <div class="login">
       <form method="post">
         {% csrf_token %}
         <div class="form">
-          <h1>Login</h1>
+          <div class="pageName">Login</div>
           <input type="text" name="username" class="username" placeholder="Username">
           <input type="password" name="password" class="password" placeholder="Password">
           <br>
@@ -38,6 +41,13 @@
 
 
   </div>
+
+  <footer>
+    <p>Copyright &copy; Thomas More Mechelen-Antwerp vzw - Campus De Nayer - Professional bachelor
+      electronics-ict -
+      2023.
+    </p>
+  </footer>
 </body>
 
 </html>
