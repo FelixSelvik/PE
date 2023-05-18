@@ -1,7 +1,7 @@
-h1{
+.pageName{
     text-align:center;
     color:white;
-    
+    font-size: 45px;
 }
 
 body{
@@ -111,11 +111,12 @@ form,h2{
 
 .form{
     text-align:center;
-    margin-top:5%;
-    margin-left:30%;
-    margin-right:30%;
-    margin-bottom:5%;
-    padding-bottom: 5%;
+    margin-top:3%;
+    padding-top:2%;
+    margin-left:35%;
+    margin-right:35%;
+    margin-bottom:3%;
+    padding-bottom: 1%;
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size:35px;
@@ -130,6 +131,8 @@ input{
     margin-top:40px;
     margin-bottom:20px;
     font-size:30px;
+    background-color: black;
+    color: white;
 }
 
 input:focus::placeholder {
@@ -141,7 +144,28 @@ input:focus::placeholder {
     font-size:20px;
 }
 
+footer {
+    margin-bottom: 2%;
+    background-color: #282b4a;
+    color: white;
+    border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: fit-content;
+}
 
+.login-text {
+    font-size: 20px;
+}
+
+.login-link {
+    font-size: 25px;
+}
 
 
 

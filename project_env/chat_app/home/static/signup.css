@@ -18,7 +18,7 @@ body{
 ul{
     list-style-type:none;
     font-size:30px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    
 }
 
@@ -51,11 +51,6 @@ a:active{
     display: flex;
 }
 
-.link-style{
-    padding-right:60px;
-    padding-left:60px;
-}
-
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -65,6 +60,13 @@ a:active{
 nav{
     background-color:#282b4a;
 }
+
+.link-style{
+    padding-right:60px;
+    padding-left:60px;
+}
+
+
 
 .icon{
     width:50px;
@@ -117,13 +119,19 @@ nav{
 
 .form{
     text-align:center;
-    margin-left:20%;
-    margin-right:20%;
+    margin-top:3%;
+    padding-top:2%;
+    margin-left:35%;
+    margin-right:35%;
+    margin-bottom:3%;
+    padding-bottom: 1%;
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top:10px;
-    padding:80px;
     font-size:35px;
+    background-color:#282b4a;
+    border:1px solid #282b4a;
+    border-radius:1%;
+    min-width: fit-content;
 }
 
 
@@ -132,6 +140,8 @@ input{
     margin-top:40px;
     margin-bottom:20px;
     font-size:30px;
+    background-color: black;
+    color: white;
 }
 
 input:focus::placeholder {
@@ -155,16 +165,6 @@ input:focus::placeholder {
     background-color:rgb(132, 14, 228);
 }
 
-.internal-form{
-    background-color:#282b4a;
-    border:1px solid #282b4a;
-    border-radius:1%;
-    padding-bottom:60px;
-    margin-left:100px;
-    margin-right:100px;
-    padding-top:30px;
-}
-
 .signup{
     padding-left:50px;
     padding-right:50px;
@@ -179,6 +179,26 @@ input:focus::placeholder {
 .login-text{
     font-size:20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer {
+    margin-bottom: 2%;
+    background-color: #282b4a;
+    color: white;
+    border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: fit-content;
+}
+
+.error{
+    color:red;
+    font-size:20px;
 }
 
 

@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Chat App</title>
-   {% load static %}
-   <link rel="stylesheet" type="text/css" href="{% static 'index.css'%}?now 'U'"/>
-   <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
-   <script src="../../static/js/jquery.js"></script>
 
-   <script>
-    $(document).ready(function() {
+<head>
+  <meta charset="UTF-8">
+  <title>Chat App</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css'%}?now 'U'" />
+  <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
+  <script src="../../static/js/jquery.js"></script>
+
+  <script>
+    $(document).ready(function () {
       $(".block").animate({
-        width:'500px', 
+        width: '500px',
         height: '600px',
-        
-      }, 1000, function() {
-        $("#elm1, #elm2").fadeIn("2000", function() {
+
+      }, 1000, function () {
+        $("#elm1, #elm2").fadeIn("2000", function () {
           $("#elm3, #elm4").fadeIn("2500")
         })
       });
     });
-    
 
-   </script>
+
+  </script>
 
 </head>
+
 <body>
   <div id="background">
-  <nav class="navbar">
-    <a href="" class="logo">
-      <img src="../../static/images/logo.png" alt="logo" class="icon">
-    </a>
-    <ul class="nav-links">
-      {% if request.user.is_authenticated %}
+    <nav class="navbar">
+      <a href="" class="logo">
+        <img src="../../static/images/logo.png" alt="logo" class="icon">
+      </a>
+      <ul class="nav-links">
+        <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+        {% if request.user.is_authenticated %}
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>
-            <div class="dropdown-items">
-              <a href="#" class="rooms">Room1</a>
-              <a href="#" class="rooms">Room2</a>
-              <a href="#" class="rooms">Room3</a>
-            </div>
+          <div class="dropdown-items">
+            <a href="#" class="rooms">Room1</a>
+            <a href="#" class="rooms">Room2</a>
+            <a href="#" class="rooms">Room3</a>
+          </div>
         </div>
         <li class="username"><a href="">{{ user.username }}</a></li>
         <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
-      {% else %}
+        {% else %}
 
 
-      <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
-      <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
-      {% endif %}
-    </ul>
-  </nav>
+        <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
+        <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
   {% if request.user.is_authenticated %}
   <script>
@@ -61,16 +64,34 @@
 
     <div class="block">
       <p class="containers" id="elm1">About Us</p>
-      <p class="contents" id="elm2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem asperiores exercitationem reiciendis assumenda facilis maiores? Laboriosam alias sed suscipit explicabo? Ipsum ipsam, quibusdam labore perspiciatis sed quos vero dolor hic.</p>
+      <p class="contents" id="elm2">
+        We're excited to present our chat project, which we've been working on to enhance online communication and
+        interaction.<br><br>
+        This project reflects our passion for technology and our commitment to improving people's lives.<br><br>
+        We hope this website will inspire you to join us in making a positive impact in the world.</p>
     </div>
 
     <div class="block">
       <p class="containers" id="elm3">About the Project</p>
-      <p class="contents" id="elm4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem asperiores exercitationem reiciendis assumenda facilis maiores? Laboriosam alias sed suscipit explicabo? Ipsum ipsam, quibusdam labore perspiciatis sed quos vero dolor hic.</p>
+      <p class="contents" id="elm4">
+        The aim of this project is to create a real time chat application where users are able to create an account,
+        login and chat with other users. <br><br>
+        This chat app will allow you to communicate with someone who shares
+        similar interests. <br><br>
+        The messages will be encrypted so that the users are able to chat securely.
+      </p>
     </div>
-  </br>
-  
+    </br>
+
   </div>
+
+  <footer>
+    <p>Copyright &copy; Thomas More Mechelen-Antwerp vzw - Campus De Nayer - Professional bachelor
+      electronics-ict -
+      2023.
+    </p>
+  </footer>
   {% endif %}
 </body>
+
 </html>
