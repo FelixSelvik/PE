@@ -4,16 +4,43 @@
 <head>
     <meta charset="utf-8"/>
     <title>Chat Room</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'room.css'%}?now 'U'"/>
     <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../static/index.css"/>
 </head>
 <body>
-
+    <div id="background">
+        <nav class="navbar">
+          <a href="" class="logo">
+            <img src="../../static/images/logo.png" alt="logo" class="icon">
+          </a>
+          <ul class="nav-links">
+            {% if request.user.is_authenticated %}
+              <div class="dropdown-div">
+                <button class="drop-button">Rooms</button>
+                  <div class="dropdown-items">
+                    <a href="#" class="rooms">Room1</a>
+                    <a href="#" class="rooms">Room2</a>
+                    <a href="#" class="rooms">Room3</a>
+                  </div>
+              </div>
+              <li class="username"><a href="">{{ user.username }}</a></li>
+              <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+      
+      
+            <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
+            <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+        </div>
     {% if request.user.is_authenticated %}
-        {{ user.username }}
+    <div class="mainblock">
     
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br>
-    <input id="chat-message-input" type="text" size="100"><br>
+    <textarea readonly id="chat-log" cols="100" rows="20" size="100"></textarea><br>
+    <label for="chat-message-input">{{ user.username }}:</label>
+    <input id="chat-message-input" type="text" size="100" placeholder="Type here your message">
     <input id="chat-message-submit" type="button" value="Send">
     {{ room_name|json_script:"room-name" }}
     <script>
@@ -52,7 +79,15 @@
             messageInputDom.value = '';
         };
     </script>
+</div>
+{% else %}
+
+<script>
+    window.location.href = "http://127.0.0.1:8000/home";
+</script>
 
 {% endif %}
+
+
 </body>
 </html>

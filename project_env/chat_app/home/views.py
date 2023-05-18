@@ -19,7 +19,7 @@ def signup(request):
 
       auth_login(request, user)
 
-      return redirect('http://127.0.0.1:8000/home/room.html')
+      return redirect('http://127.0.0.1:8000/home/room/')
   else:
     form = SignUpForm()
 
