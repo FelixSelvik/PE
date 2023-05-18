@@ -1,0 +1,177 @@
+h1{
+    text-align:center;
+    color:white;
+    padding-top: 200px;
+    
+}
+
+body{
+    margin: 0;
+    width: 100%; 
+    background-color:#8c70c6;
+}
+ 
+.background{
+    background-color:#8c70c6;
+}
+
+.mainblock{
+    margin-top: 3%;
+    text-align:center;
+}
+
+ul{
+    list-style-type:none;
+    font-size:30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+   
+}
+
+a:link{
+    text-decoration: none;
+    color:white;
+}
+
+a:visited{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover{
+    text-decoration: none;
+    color:#c393eb;
+}
+
+a:active{
+    text-decoration: none;
+    color:blueviolet;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.link-style{
+    padding-right:60px;
+    padding-left:60px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    background-color:#282b4a;
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    padding-left:100px;
+}
+
+/*dropdown css */
+.drop-button{
+    background-color:#282b4a;
+    color:white;
+    padding-right:60px;
+    padding-left:60px;
+    font-size:30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor:pointer;
+	border: none;
+    text-align:center;
+    
+}
+
+.dropdown-items{
+    display:none;
+    position:absolute;
+    background-color:#282b4a;
+    z-index:1;
+    padding-top:14%;
+    margin-left:43px;
+    margin-right:50px;
+}
+
+.dropdown-items a:hover{
+    background-color:white;
+}
+
+.dropdown-div:hover .dropdown-items{
+    display:block;
+}
+
+
+.dropdown-div{
+    position:relative;
+    display:block;
+}
+
+.rooms{
+    display:block;
+    padding:15px;
+}
+
+.containers{
+    text-align:center;
+    width:400px;
+    background-color:#282b4a;
+    margin-left:40px;
+    margin-right:40px;
+    border-radius:5px;
+    padding:15px;
+    margin-bottom:20px;
+    
+}
+
+.contents{
+    text-align:center;
+    width:400px;
+    background-color:#282b4a;
+    margin-left:40px;
+    margin-right:40px;
+    border-radius:5px;
+    padding:15px;
+}
+
+textarea {
+    color:darkgoldenrod;
+    resize: none;
+    background-color:palegreen;
+}
+
+#chat-message-input {
+    background-color: lightblue;
+    color:darkgreen;
+    margin: 1%;
+    width: 25%;
+}
+
+#chat-message-submit {
+    background-color: brown ;
+    color: white;
+}
+
+input, textarea{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+}
+
+label {
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
