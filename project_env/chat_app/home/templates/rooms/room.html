@@ -40,49 +40,44 @@
     {% if request.user.is_authenticated %}
     <div class="mainblock">
 
-        <textarea readonly id="chat-log" cols="100" rows="20" size="100"></textarea><br>
-        <label for="chat-message-input">{{ user.username }}:</label>
-        <input id="chat-message-input" type="text" size="100" placeholder="Type here your message" class="required">
-        <input id="chat-message-submit" type="button" value="Send" class="button">
-        {{ room_name|json_script:"room-name" }}
-        <script>
-            const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        <form id="form">
+            <input type="text" name="message"/>
 
-            const chatSocket = new WebSocket(
-                'ws://'
-                + window.location.host
-                + '/ws/chat/'
-                + roomName
-                + '/'
-            );
+        </form>
 
-            chatSocket.onmessage = function (e) {
-                const data = JSON.parse(e.data);
-                document.querySelector('#chat-log').value += (data.message + '\n');
-            };
+        <div id="messages"></div>
 
-            chatSocket.onclose = function (e) {
-                console.error('Chat socket closed unexpectedly');
-            };
+        <script type="text/javascript">
+            let url = `ws://${window.location.host}/ws/socket-server/`
 
-            document.querySelector('#chat-message-input').focus();
-            document.querySelector('#chat-message-input').onkeyup = function (e) {
-                if (e.keyCode === 13) {  // enter, return
-                    document.querySelector('#chat-message-submit').click();
+            const chatSocket = new WebSocket(url)
+
+            chatSocket.onmessage = function(e){
+                let data = JSON.parse(e.data)
+                console.log('Data:', data)
+
+                if(data.type === 'chat'){
+                    let messages = document.getElementById('messages')
+
+                    messages.insertAdjacentHTML('beforeend', `<div>
+                            <p>${data.message}</p>
+                        </div>`)
                 }
-            };
+            } 
 
-            document.querySelector('#chat-message-submit').onclick = function (e) {
-                const messageInputDom = document.querySelector('#chat-message-input');
-                if (messageInputDom.value !== '') {
-                    const message = messageInputDom.value;
-                    chatSocket.send(JSON.stringify({
-                        'message': message
-                    }));
-                    messageInputDom.value = '';
-                }
-            };
+            let form = document.getElementById('form')
+
+            form.addEventListener('submit', (e)=> {
+                e.preventDefault()
+                let message = e.target.message.value
+                chatSocket.send(JSON.stringify({
+                    'message':message
+                }))
+                form.reset()
+            })
+
         </script>
+
     </div>
     {% else %}
 
