@@ -32,7 +32,6 @@ chatSocket.onmessage = function (e) {
         messages.insertAdjacentHTML('beforeend', `<div>
             <p class=User1Time>${currentDate}, ${currentTime}</p>
         </div>`)
-        textArea.scrollIntoView({ block: "end" });
     }
     else {
         messages.insertAdjacentHTML('beforeend', `<div>
@@ -41,8 +40,8 @@ chatSocket.onmessage = function (e) {
         messages.insertAdjacentHTML('beforeend', `<div>
             <p class=User2Time>${currentDate}, ${currentTime}</p>
         </div>`)
-        textArea.scrollIntoView({ block: "end" });
     }
+    textArea.scrollIntoView({ block: "end" });
 };
 
 chatSocket.onclose = function (e) {

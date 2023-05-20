@@ -258,4 +258,8 @@ span {
     overflow-y: auto;
 }
 
+p{
+    word-wrap: break-word;
+}
+
 
