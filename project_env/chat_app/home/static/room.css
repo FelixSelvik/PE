@@ -188,9 +188,48 @@ footer {
     width: fit-content;
 }
 
+.messagebox{
+       width:600px;
+       height:300px;
+       background-color:#282b4a;
+       margin:auto;
+       border:2px solid #42488b;
+       border-radius:10px;
+}
 
+.messageinput{
+    border:2px solid #42488b;
+    border-radius:10px;
+    width:530px;
+    margin-top:20px;
+}
 
+.sendbutton{
+    border:2px solid #42488b;
+    border-radius:10px;
+}
 
+.User1{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background-color:green;
+    width:auto;
+    border-radius:10px;
+    margin:5px;
+    max-width:200px;
+    text-align:left;
+    padding:10px;
+}
 
-
-
+.User2{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background-color:blue;
+    width:auto;
+    border-radius:10px;
+    margin:5px;
+    margin-left:375px;
+    max-width:200px;
+    text-align:left;
+    padding:10px;
+}

@@ -40,8 +40,10 @@
     {% if request.user.is_authenticated %}
     <div class="mainblock">
 
-        
-        <textarea readonly id="chat-log" cols="100" rows="20" size="100"></textarea><br>
+        <div class="messagebox">
+            <div id="messages"></div>
+        </div>
+
         <label for="chat-message-input">{{ user.username }}:</label>
         <input id="chat-message-input" type="text" size="100" placeholder="Type here your message" class="required">
         <input id="chat-message-submit" type="button" value="Send" class="button">
@@ -56,7 +58,20 @@
 
             chatSocket.onmessage = function (e) {
                 const data = JSON.parse(e.data);
-                document.querySelector('#chat-log').value += (data.message + '\n');
+
+                let messages = document.getElementById('messages')
+                var removeColon = data.message.split(':');
+                var chatUsername = removeColon[0].trim();
+                if (chatUsername === '{{ user.username }}') {
+                    messages.insertAdjacentHTML('beforeend', `<div>
+                            <p class=User1>${data.message}</p>
+                        </div>`)
+                }
+                else {
+                    messages.insertAdjacentHTML('beforeend', `<div>
+                            <p class=User2>${data.message}</p>
+                        </div>`)
+                }
             };
 
             chatSocket.onclose = function (e) {
@@ -80,8 +95,6 @@
                     messageInputDom.value = '';
                 }
             };
-
-
         </script>
 
     </div>
