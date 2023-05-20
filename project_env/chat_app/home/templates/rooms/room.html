@@ -41,11 +41,14 @@
     {% if request.user.is_authenticated %}
     <div class="mainblock">
 
+        <div class="welcome">
+            <p>{{ user.username }}</p>
+        </div>
+
         <div class="messagebox" id="messagebox">
             <div id="messages"></div>
         </div>
 
-        <label for="chat-message-input">{{ user.username }}:</label>
         <input id="chat-message-input" type="text" size="100" placeholder="Type here your message">
         <input id="chat-message-submit" type="button" value="Send" class="button">
 

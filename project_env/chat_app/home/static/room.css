@@ -149,18 +149,19 @@ textarea {
 }
 
 #chat-message-input {
-    background-color: black;
+    border-radius:10px;
     color: white;
-    margin: 1%;
-    margin-top: 2%;
-    width: 25%;
+    width:530px;
+    margin-top:10px;
+    
 }
 
 .button {
-    background-color: black ;
     padding-left: 1%;
     padding-right: 1%;
     color: white;
+    border-radius:10px;
+    background-color:#8c70c6;
 }
 
 input, textarea{
@@ -224,7 +225,7 @@ footer {
 .User2{
     font: 1em/1.25em Arial, Helvetica, sans-serif;
     font-size:20px;
-    background-color:blue;
+    background-color:rgb(0, 81, 255);
     width:auto;
     border-radius:10px;
     margin:5px;
@@ -260,6 +261,17 @@ span {
 
 p{
     word-wrap: break-word;
+}
+.welcome{
+    font-size:20px;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:200px;
+    background-color:#42488b;
+    margin-left:auto;
+    margin-right:auto;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
 }
 
 
