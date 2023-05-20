@@ -9,6 +9,7 @@
   <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
   <script src="../../static/js/jquery.js"></script>
 
+  
   <script>
     $(document).ready(function () {
       $(".block").animate({
@@ -16,13 +17,25 @@
         height: '600px',
 
       }, 1000, function () {
-        $("#elm1, #elm2").fadeIn("2000", function () {
-          $("#elm3, #elm4").fadeIn("2500")
+        $("#elm1, #elm2").fadeIn(1000, function () {
+          $("#elm3, #elm4").fadeIn(1500)
         })
       });
     });
+  </script>
 
-
+  <script>
+    $(document).ready(function () {
+      $("#message1").fadeIn(1000, function() {
+        $("#message2").fadeIn(1500, function() {
+          $("#message3").fadeIn(2000, function() {
+            $("#message4").fadeIn(2500, function() {
+              $("#message5").fadeIn(3000)
+            })
+          })
+        })
+      })
+    })
   </script>
 
 </head>
@@ -69,6 +82,15 @@
         interaction.<br><br>
         This project reflects our passion for technology and our commitment to improving people's lives.<br><br>
         We hope this website will inspire you to join us in making a positive impact in the world.</p>
+    </div>
+
+    <div class="block">
+      <p class="containers">Chat App</p>
+        <p class="messageA" id="message1">Hi, how are you?</p>
+        <p class="messageB" id="message2">Im fine, thanks!</p>
+        <p class="messageA" id="message3">Did you get the email?</p>  
+        <p class="messageB" id="message4">Yes, ill be there</p> 
+        <p class="messageA" id="message5">Okay, bye!</p>
     </div>
 
     <div class="block">

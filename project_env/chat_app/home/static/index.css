@@ -142,6 +142,25 @@ nav{
     padding:15px;
 }
 
+.messageA{
+    text-align:center;
+    width:200px;
+    background-color:#5d00ff;
+    margin-left:40px;
+    border-radius:5px;
+    padding:15px;
+    
+}
+
+.messageB{
+    text-align:center;
+    width:200px;
+    background-color:#00a6ff;
+    margin-left:240px;
+    border-radius:5px;
+    padding:15px;
+}
+
 .block{
     margin:50px;
     border:3px solid #c393eb;
@@ -152,6 +171,10 @@ nav{
     box-shadow:10px 10px 2px 2px rgba(0,0,255,0.2);
     background: rgb(170,175,228);
 background: linear-gradient(90deg, rgba(170,175,228,1) 0%, rgba(173,40,255,1) 35%, rgba(195,147,235,1) 100%);
+}
+
+#message1,#message2,#message3,#message4,#message5{
+    display:none;
 }
 
 .mainblock{
