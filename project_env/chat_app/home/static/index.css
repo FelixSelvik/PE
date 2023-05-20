@@ -9,6 +9,9 @@ body{
     margin: 0;
     width: 100%; 
     background-color:#8c70c6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
  
 .background{
@@ -109,6 +112,9 @@ nav{
     display:block;
 }
 
+#elm1, #elm2, #elm3, #elm4 {
+    max-height: fit-content;
+}
 
 .dropdown-div{
     position:relative;
@@ -122,19 +128,20 @@ nav{
 
 .containers{
     text-align:center;
-    width:400px;
     background-color:#282b4a;
     margin-left:40px;
     margin-right:40px;
     border-radius:5px;
     padding:15px;
     margin-bottom:20px;
-    
+    min-width: 0;
+    min-height: fit-content;
 }
 
 .contents{
     text-align:center;
-    width:400px;
+    min-width: 0;
+    max-height: 100%;
     background-color:#282b4a;
     margin-left:40px;
     margin-right:40px;
@@ -154,7 +161,7 @@ nav{
 
 .messageB{
     text-align:center;
-    width:200px;
+    min-width: 0;
     background-color:#00a6ff;
     margin-left:240px;
     border-radius:5px;
@@ -181,26 +188,20 @@ background: linear-gradient(90deg, rgba(170,175,228,1) 0%, rgba(173,40,255,1) 35
     display:flex;
     justify-content:center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    min-width: 0;
+    min-height: fit-content;
 }
 
-#elm1,#elm2,#elm3,#elm4{
-    display:none;
+.block {
+    min-width: 0;
+    min-height: fit-content;
 }
 
 footer {
-    margin-bottom: 2%;
     background-color: #282b4a;
     color: white;
-    border-style: solid;
-	border-color: white;
-    border-width: 2px;
+    margin-top: auto;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1%;
-    padding-right: 1%;
-    width: fit-content;
 }
 
 

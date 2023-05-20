@@ -9,6 +9,9 @@ body{
     margin: 0;
     width: 100%; 
     background-color:#8c70c6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
  
 .background{
@@ -140,8 +143,6 @@ input{
     margin-top:40px;
     margin-bottom:20px;
     font-size:30px;
-    background-color: black;
-    color: white;
 }
 
 input:focus::placeholder {
@@ -182,18 +183,10 @@ input:focus::placeholder {
 }
 
 footer {
-    margin-bottom: 2%;
     background-color: #282b4a;
     color: white;
-    border-style: solid;
-	border-color: white;
-    border-width: 2px;
+    margin-top: auto;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1%;
-    padding-right: 1%;
-    width: fit-content;
 }
 
 .error{

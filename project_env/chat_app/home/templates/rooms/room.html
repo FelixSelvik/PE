@@ -42,11 +42,13 @@
     <div class="mainblock">
 
         <div class="welcome">
-            <p>{{ user.username }}</p>
+            <p>Name of the room</p>
         </div>
 
         <div class="messagebox" id="messagebox">
-            <div id="messages"></div>
+            <div id="messages">
+                <p class=welcome2>Welcome, {{ user.username }}</p>
+            </div>
         </div>
 
         <input id="chat-message-input" type="text" size="100" placeholder="Type here your message">
@@ -66,7 +68,7 @@
     {% endif %}
 
     <footer>
-        <p>Copyright &copy; Thomas More Mechelen-Antwerp vzw - Campus De Nayer - Professional bachelor
+        <p>Copyright &copy; <a href="https://www.thomasmore.be/">Thomas More Mechelen-Antwerp vzw</a> - Campus De Nayer - Professional bachelor
             electronics-ict -
             2023.
         </p>
