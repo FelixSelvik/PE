@@ -233,3 +233,29 @@ footer {
     text-align:left;
     padding:10px;
 }
+
+.User1Time{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:left;
+    margin-left:50px;
+    color: white;
+}
+
+.User2Time{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:right;
+    margin-right:50px;
+    color: white;
+}
+
+span {
+    font-weight: bold;
+}
+
+.messagebox{
+    overflow-y: auto;
+}
+
+

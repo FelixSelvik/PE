@@ -1,0 +1,1 @@
+keyGenerator was created from encrypted.js file, using node-rsa, browserify and node-js
