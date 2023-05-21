@@ -43,7 +43,7 @@
     <div class="mainblock">
 
         <div class="welcome">
-            <p>Name of the room</p>
+            <p id="room-name">Name of the room</p>
         </div>
 
         <div class="messagebox" id="messagebox">
@@ -58,6 +58,8 @@
         <script type="text/javascript">
             const userName = '{{ user.username }}';
             const chatname = document.title;
+            const roomNameElement = document.getElementById('room-name');
+            roomNameElement.textContent = chatname;
         </script>
 
     </div>
