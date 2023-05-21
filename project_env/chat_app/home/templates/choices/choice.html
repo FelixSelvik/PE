@@ -21,12 +21,38 @@
             return myChoices;
         }
         else{
-            alert("Maximum of 3 choices allowed")
-        }
-        
+            alert("Maximum of 3 choices allowed");
+        } 
+    }
 
-        
-        
+    function submitChoices(){
+        for (i=0;i<myChoices.length;i++){
+                switch(myChoices[i]){
+                    case 1:
+                        document.getElementById("Sports")
+                    break
+
+                    case 2:
+                    document.write("Music");
+                    break
+
+                    case 3:
+                    document.write("Reading");
+                    break
+
+                    case 4:
+                    document.write("History");
+                    break
+
+                    case 5:
+                    document.write("Gaming");
+                    break
+
+                    case 6:
+                    document.write("Cooking");
+                    break
+            }
+        }
     }
 
     
@@ -75,6 +101,7 @@
     
     <div class="options">
         <p>Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made available to you and other likeminded users.</p>
+        <input type="submit" onClick="submitChoices()"></input>
         <p id="output"></p>
         <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
         <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
