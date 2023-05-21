@@ -9,28 +9,31 @@
   <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
   <script src="../../static/js/jquery.js"></script>
 
-  
+  <script>
+    $(document).ready(function () {
+      $(".containers").fadeIn(1000)
+    })
+  </script>
+
   <script>
     $(document).ready(function () {
       $(".block").animate({
-        width: '500px',
         height: '650px',
 
-      }, 1000, function () {
-        $("#elm1, #elm2").fadeIn(1000, function () {
-          $("#elm3, #elm4").fadeIn(1500)
-        })
-      });
-    });
+      })})
   </script>
 
   <script>
     $(document).ready(function () {
       $("#message1").fadeIn(1000, function() {
         $("#message2").fadeIn(1500, function() {
-          $("#message3").fadeIn(2000, function() {
-            $("#message4").fadeIn(2500, function() {
-              $("#message5").fadeIn(3000)
+          $("#message3").fadeIn(1500, function() {
+            $("#message4").fadeIn(1500, function() {
+              $("#message5").fadeIn(1500, function() {
+                $("#message6").fadeIn(1500, function() {
+                  $("#message7").fadeIn(1500)
+                })
+              })
             })
           })
         })
@@ -47,8 +50,8 @@
         <img src="../../static/images/logo.png" alt="logo" class="icon">
       </a>
       <ul class="nav-links">
-        <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
-        <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
+        <li class="link-style" id="nav1"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+        <li class="link-style" id="nav2"><a href="{% url 'contact' %}">Contact</a></li>
         {% if request.user.is_authenticated %}
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>
@@ -58,13 +61,13 @@
             <a href="#" class="rooms">Room3</a>
           </div>
         </div>
-        <li class="username"><a href="">{{ user.username }}</a></li>
-        <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
+        <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
+        <li class="link-style" id="nav4"><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
 
 
-        <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
-        <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
+        <li class="link-style" id="nav5"><a href="{% url 'login' %}">Login</a></li>
+        <li class="link-style" id="nav6"><a href="{% url 'signup' %}">Sign up</a></li>
         {% endif %}
       </ul>
     </nav>
@@ -77,34 +80,22 @@
   <div class="mainblock">
 
     <div class="block">
-      <p class="containers" id="elm1">About Us</p>
-      <p class="contents" id="elm2">
-        We're excited to present our chat project, which we've been working on to enhance online communication and
-        interaction.<br><br>
-        This project reflects our passion for technology and our commitment to improving people's lives.<br><br>
-        We hope this website will inspire you to join us in making a positive impact in the world.</p>
+      <p class="containers">About Us</p>
+        <p class="messageA" id="message1"> We're excited to present our chat project, which we've been working on to enhance online communication and
+        interaction.</p>
+        <p class="messageB" id="message2">This project reflects our passion for technology and our commitment to improving people's lives.</p>
+        <p class="messageA" id="message3">We hope this website will inspire you to join us in making a positive impact in the world</p>  
     </div>
 
     <div class="block">
-      <p class="containers">Chat App</p>
-        <p class="messageA" id="message1">Hi, how are you?</p>
-        <p class="messageB" id="message2">Im fine, thanks!</p>
-        <p class="messageA" id="message3">Did you get the email?</p>  
-        <p class="messageB" id="message4">Yes, ill be there</p> 
-        <p class="messageA" id="message5">Okay, bye!</p>
+      <p class="containers">Project Description</p>
+        <p class="message2A" id="message4"> The aim of this project is to create a real time chat application</p>
+          <p class="message2B" id="message5">Users are able to create an account,
+            login and chat with other users.</p>
+        <p class="message2A" id="message6">This chat app will allow you to communicate with someone who shares
+          similar interests.</p>
+        <p class="message2B" id="message7">The messages will be encrypted so that the users are able to chat securely.</p>  
     </div>
-
-    <div class="block">
-      <p class="containers" id="elm3">About the Project</p>
-      <p class="contents" id="elm4">
-        The aim of this project is to create a real time chat application where users are able to create an account,
-        login and chat with other users. <br><br>
-        This chat app will allow you to communicate with someone who shares
-        similar interests. <br><br>
-        The messages will be encrypted so that the users are able to chat securely.
-      </p>
-    </div>
-    </br>
 
   </div>
 

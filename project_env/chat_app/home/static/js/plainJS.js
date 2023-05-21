@@ -18,30 +18,35 @@ chatSocket.onmessage = function (e) {
     const data = JSON.parse(e.data);
     let messages = document.getElementById('messages')
     var removeColon = data.message.split(':');
-    var chatUsername = removeColon[0].trim();
+    var userandchat = removeColon[0].trim();
+    var removerHash = userandchat.split('@');
+    var chatRoom = removerHash[0].trim();
+    var chatUsername = removerHash[1].trim();
     var encryptedMessage = removeColon[1].trim();
     var decryptedMessage = key.decrypt(encryptedMessage, 'utf8');
     const textArea = document.getElementById("messages");
     const date = new Date();
     const currentDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     const currentTime = date.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' });
-    if (chatUsername === userName) {
-        messages.insertAdjacentHTML('beforeend', `<div>
-                <p class=User1><span>${chatUsername}</span>: ${decryptedMessage}</p>
-            </div>`);
-        messages.insertAdjacentHTML('beforeend', `<div>
-            <p class=User1Time>${currentDate}, ${currentTime}</p>
-        </div>`)
-    }
-    else {
-        messages.insertAdjacentHTML('beforeend', `<div>
-                <p class=User2><span>${chatUsername}</span>: ${decryptedMessage}</p>
+    if (chatRoom == chatname) {  
+        if (chatUsername === userName) {
+            messages.insertAdjacentHTML('beforeend', `<div>
+                    <p class=User1><span>${chatUsername}</span>: ${decryptedMessage}</p>
+                </div>`);
+            messages.insertAdjacentHTML('beforeend', `<div>
+                <p class=User1Time>${currentDate}, ${currentTime}</p>
             </div>`)
-        messages.insertAdjacentHTML('beforeend', `<div>
-            <p class=User2Time>${currentDate}, ${currentTime}</p>
-        </div>`)
-    }
-    textArea.scrollIntoView({ block: "end" });
+        }
+        else {
+            messages.insertAdjacentHTML('beforeend', `<div>
+                    <p class=User2><span>${chatUsername}</span>: ${decryptedMessage}</p>
+                </div>`)
+            messages.insertAdjacentHTML('beforeend', `<div>
+                <p class=User2Time>${currentDate}, ${currentTime}</p>
+            </div>`)
+        }
+        textArea.scrollIntoView({ block: "end" });
+    };
 };
 
 chatSocket.onclose = function (e) {
@@ -61,7 +66,7 @@ document.querySelector('#chat-message-submit').onclick = function (e) {
         var unencryptedMessage = messageInputDom.value;
         var message = key.encrypt(unencryptedMessage, 'base64');
         chatSocket.send(JSON.stringify({
-            'message': userName + ": " + message
+            'message': chatname + "@" + userName + ": " + message
         }));
         messageInputDom.value = '';
     }
