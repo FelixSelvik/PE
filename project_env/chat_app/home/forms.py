@@ -9,8 +9,23 @@ class SignUpForm(UserCreationForm):
         fields = ['username', 'password1', 'password2']
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, required=True)
-    email = forms.CharField(validators=[EmailValidator()])
-    phone = forms.CharField(max_length=8, min_length=8, required=False)
-    subject = forms.CharField(max_length=100, required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    name = forms.CharField(
+        max_length=100, required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Name'})
+    )
+    email = forms.CharField(
+        validators=[EmailValidator()],
+        widget=forms.EmailInput(attrs={'placeholder': 'Email'})
+    )
+    phone = forms.CharField(
+        max_length=8, min_length=8, required=False,
+        widget=forms.TextInput(attrs={'placeholder': 'Phone number'})
+    )
+    subject = forms.CharField(
+        max_length=100, required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Subject'})
+    )
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={'placeholder': 'Message'}),
+        required=True
+    )

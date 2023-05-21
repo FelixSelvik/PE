@@ -34,14 +34,14 @@ def room(request, room_name):
 
 def contact(request):
     if request.method == "POST":
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, prefix='contact')
         
         if form.is_valid():
-          save_form_data(form.cleaned_data)
-          return HttpResponseRedirect("/home/")
+            save_form_data(form.cleaned_data)
+            return HttpResponseRedirect("/home/")
 
     else:
-        form = ContactForm()
+        form = ContactForm(prefix='contact')
 
     return render(request, "contact/contact.html", {"form": form})
 

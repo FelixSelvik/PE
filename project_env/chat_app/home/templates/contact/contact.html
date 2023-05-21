@@ -37,64 +37,63 @@
               {% endif %}
             </ul>
           </nav>
-
-        <div class="login">
+          <div class="login">
             <form action="/contact/" method="post">
                 {% csrf_token %}
                 <div class="form">
                     <div class="label-div">
                         <label class="contact">Contact us</label>
                     </div>
-                    
+        
                     <div class="inputs">
-                        <input type="text" name="name" class="name" placeholder="Full name">
-                        {% if form.errors %}
-                            {% for error in form.name.errors %}
+                        {{ form.name }}
+                        {% if form.errors.name %}
+                            {% for error in form.errors.name %}
+                                <p class="error">{{ error|escape }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+        
+                    <div class="inputs">
+                        {{ form.email }}
+                        {% if form.errors.email %}
+                            {% for error in form.errors.email %}
+                                <p class="error">{{ error|escape }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+        
+                    <div class="inputs">
+                        {{ form.phone }}
+                        {% if form.errors.phone %}
+                            {% for error in form.errors.phone %}
+                                <p class="error">{{ error|escape }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+        
+                    <div class="inputs">
+                        {{ form.subject }}
+                        {% if form.errors.subject %}
+                            {% for error in form.errors.subject %}
+                                <p class="error">{{ error|escape }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+        
+                    <div class="inputs">
+                        {{ form.message }}
+                        {% if form.errors.message %}
+                            {% for error in form.errors.message %}
                                 <p class="error">{{ error|escape }}</p>
                             {% endfor %}
                         {% endif %}
                     </div>
 
-                    <div class="inputs">
-                        <input type="email" name="email" class="email" placeholder="Email address">
-                        {% if form.errors %}
-                            {% for error in form.email.errors %}
-                                <p class="error">{{ error|escape }}</p>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-
-                    <div class="inputs">
-                        <input type="number" name="phone" class="phone" placeholder="Phone number">
-                        {% if form.errors %}
-                            {% for error in form.phone.errors %}
-                                <p class="error">This field must have 8 characters.</p>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-              
-                    <div class="inputs">
-                        <input type="text" name="subject" class="subject" placeholder="Subject">
-                        {% if form.errors %}
-                            {% for error in form.subject.errors %}
-                                <p class="error">{{ error|escape }}</p>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-
-                    <div class="inputs">
-                        <textarea name="message" class="message" placeholder="Message"></textarea>
-                        {% if form.errors %}
-                            {% for error in form.message.errors %}
-                                <p class="error">{{ error|escape }}</p>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-              
                     <button class="submit-button">Send</button>
                 </div>
             </form>
-        </div>
+        </div>        
     </div>
 
     <footer>
