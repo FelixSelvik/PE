@@ -7,6 +7,7 @@ urlpatterns = [
   path('', views.home, name="home"),
   path('', views.login, name="login"),
   path('contact/', views.contact, name="contact"),
+  path('choices/', views.choices, name="choices"),
   path('signup/', views.signup, name="signup"),
   path('logout/', auth_views.LogoutView.as_view(), name="logout"),
   path("<str:room_name>/", views.room, name="room"),

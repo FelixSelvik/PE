@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chat App</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'choice.css'%}?now 'U'" />
+  <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
+  <script src="../../static/js/jquery.js"></script>
+
+  <script>
+   var myChoices = [];
+
+
+    function addChoice(i){
+
+        if(myChoices.length<3){
+            myChoices.push(i);
+            document.getElementById("output").innerHTML = myChoices;
+            return myChoices;
+        }
+        else{
+            alert("Maximum of 3 choices allowed")
+        }
+        
+
+        
+        
+    }
+
+    
+
+  </script>
+
+</head>
+
+<body>
+  <div id="background">
+    <nav class="navbar">
+      <a href="" class="logo">
+        <img src="../../static/images/logo.png" alt="logo" class="icon">
+      </a>
+      <ul class="nav-links">
+        <li class="link-style" id="nav1"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+        <li class="link-style" id="nav2"><a href="{% url 'contact' %}">Contact</a></li>
+        {% if request.user.is_authenticated %}
+        <div class="dropdown-div">
+          <button class="drop-button">Rooms</button>
+          <div class="dropdown-items">
+            <a href="#" class="rooms">Room1</a>
+            <a href="#" class="rooms">Room2</a>
+            <a href="#" class="rooms">Room3</a>
+          </div>
+        </div>
+        <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
+        <li class="link-style" id="nav4"><a href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+
+
+        <li class="link-style" id="nav5"><a href="{% url 'login' %}">Login</a></li>
+        <li class="link-style" id="nav6"><a href="{% url 'signup' %}">Sign up</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+  {% if request.user.is_authenticated %}
+  <script>
+    window.location.href = "http://127.0.0.1:8000/home/room/";
+  </script>
+  {% else %}
+
+  <div class="mainblock">
+
+    
+    <div class="options">
+        <p>Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made available to you and other likeminded users.</p>
+        <p id="output"></p>
+        <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
+        <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
+        <div id="opt3" class="option" onClick="addChoice(3)">Reading</div>
+        <div id="opt4" class="option" onClick="addChoice(4)">History</div>
+        <div id="opt5" class="option" onClick="addChoice(5)">Gaming</div>
+        <div id="opt6" class="option" onClick="addChoice(6)">Cooking</div> 
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright &copy; Thomas More Mechelen-Antwerp vzw - Campus De Nayer - Professional bachelor
+      electronics-ict -
+      2023.
+    </p>
+  </footer>
+  {% endif %}
+</body>
+
+</html>

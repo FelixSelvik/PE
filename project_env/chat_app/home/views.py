@@ -14,6 +14,9 @@ def home(request):
 def login(request):
   return render(request, 'home/login.html')
 
+def choices(request):
+  return render(request, 'choices/choice.html')
+
 def signup(request):
   if request.method == 'POST':
     form = SignUpForm(request.POST)
