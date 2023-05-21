@@ -48,6 +48,7 @@
       </a>
       <ul class="nav-links">
         <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+        <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
         {% if request.user.is_authenticated %}
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>

@@ -1,0 +1,223 @@
+h1{
+    text-align:center;
+    color:white;
+    padding-top: 200px;
+    
+}
+
+body{
+    margin: 0;
+    width: 100%; 
+    background-color:#8c70c6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.background{
+    background-color:#282b4a;
+}
+
+ul{
+    list-style-type:none;
+    font-size:30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+a:link{
+    text-decoration: none;
+    color:white;
+}
+
+a:visited{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover{
+    text-decoration: none;
+    color:#c393eb;
+}
+
+a:active{
+    text-decoration: none;
+    color:blueviolet;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    background-color:#282b4a;
+}
+
+.link-style{
+    padding-right:60px;
+    padding-left:60px;
+}
+
+
+
+.icon{
+    width:50px;
+    height:50px;
+    padding-left:100px;
+}
+
+/*dropdown css */
+.drop-button{
+    background-color:#282b4a;
+    color:white;
+    padding-right:60px;
+    padding-left:60px;
+    font-size:30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor:pointer;
+	border: none;
+    text-align:center;
+    
+}
+
+.dropdown-items{
+    display:none;
+    position:absolute;
+    background-color:#282b4a;
+    z-index:1;
+    padding-top:14%;
+    margin-left:43px;
+    margin-right:50px;
+}
+
+.dropdown-items a:hover{
+    background-color:white;
+}
+
+.dropdown-div:hover .dropdown-items{
+    display:block;
+}
+
+
+.dropdown-div{
+    position:relative;
+    display:block;
+}
+
+.rooms{
+    display:block;
+    padding:15px;
+}
+
+.form{
+    text-align:center;
+    margin-top:3%;
+    padding-top:2%;
+    margin-left:35%;
+    margin-right:35%;
+    margin-bottom:3%;
+    padding-bottom: 1%;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:35px;
+    background-color:#282b4a;
+    border:1px solid #282b4a;
+    border-radius:1%;
+    min-width: fit-content;
+}
+
+
+input, textarea{
+    width:60%;
+    margin-top:40px;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+textarea{
+    height: 140px;
+    resize: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+.submit-button{
+    width:25%;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:25px;
+    background-color:#a873fd;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:40px;
+    margin-bottom:40px;
+    min-width: fit-content;
+}
+
+.submit-button:hover{
+    background-color:rgb(132, 14, 228);
+}
+
+.contact{
+    padding-left:50px;
+    padding-right:50px;
+    font-size:45px;
+}
+
+.login-link{
+    font-size:25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-text{
+    font-size:20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer {
+    background-color: #282b4a;
+    color: white;
+    margin-top: auto;
+    text-align: center;
+}
+
+.error{
+    color:red;
+    font-size:20px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+

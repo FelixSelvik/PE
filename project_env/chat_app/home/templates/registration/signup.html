@@ -8,6 +8,11 @@
    <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
 </head>
 <body>
+  {% if request.user.is_authenticated %}
+  <script>
+    window.location.href = "http://127.0.0.1:8000/home/room/";
+  </script>
+  {% endif %}
   <div id="background">
   <nav class="navbar">
     <a href="{% url 'home' %}" class="logo">
@@ -15,6 +20,7 @@
     </a>
     <ul class="nav-links">
       <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+      <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
       <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
     </ul>
   </nav>
