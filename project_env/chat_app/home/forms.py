@@ -19,7 +19,7 @@ class ContactForm(forms.Form):
     )
     phone = forms.CharField(
         max_length=8, min_length=8, required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Phone number'})
+        widget=forms.NumberInput(attrs={'placeholder': 'Phone number'})
     )
     subject = forms.CharField(
         max_length=100, required=True,

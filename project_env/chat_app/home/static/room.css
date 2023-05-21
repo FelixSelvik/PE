@@ -20,14 +20,14 @@ body{
 
 .mainblock{
     margin: auto 0;
+    margin-bottom: 1%;
     text-align:center;
 }
 
 ul{
     list-style-type:none;
     font-size:30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a:link{
