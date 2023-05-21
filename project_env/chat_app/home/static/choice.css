@@ -3,6 +3,11 @@
     
 }
 
+#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
+    display:none;
+}
+
+
 .option{
     width:auto;
     padding:15px;
@@ -12,6 +17,32 @@
     text-align:center;
 }
 
+.welcome{
+    background-color:#282b4a;
+    font-size:20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius:10px;
+    color:white;
+    padding:10px;
+    text-align:center;
+}
+
+.submitButton{
+    width:100px;
+    padding:5px;
+    margin-left:300px;
+    text-align:center;
+    background-color: #8c70c6;
+    border:2px solid #282b4a;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+    
+}
+
+.submitButton:hover{
+    background-color: #5721c2;
+}
 #opt1{
     background-color:rgb(62, 138, 196);
 }
@@ -189,9 +220,3 @@ footer {
     margin-top: auto;
     text-align: center;
 }
-
-
-
-
-
-
