@@ -10,59 +10,59 @@
   <script src="../../static/js/jquery.js"></script>
 
   <script>
-   var myChoices = [];
+    var myChoices = [];
 
-   function changeTitle(link) {
-      var pageTitle = link.innerHTML;
-      document.title = pageTitle;
+
+    function addChoice(i) {
+
+      if (myChoices.length < 3) {
+        myChoices.push(i);
+        return myChoices;
+      }
+      else {
+        alert("Maximum of 3 choices allowed");
+      }
     }
 
-    function addChoice(i){
+    function submitChoices() {
+      for (i = 0; i < myChoices.length; i++) {
+        switch (myChoices[i]) {
+          case 1:
+            document.getElementById("Sports").style.display = "block";
+            break
 
-        if(myChoices.length<3){
-            myChoices.push(i);
-            document.getElementById("output").innerHTML = myChoices;
-            return myChoices;
+          case 2:
+            document.getElementById("Music").style.display = "block";
+            break
+
+          case 3:
+            document.getElementById("Reading").style.display = "block";
+            break
+
+          case 4:
+            document.getElementById("History").style.display = "block";
+            break
+
+          case 5:
+            document.getElementById("Gaming").style.display = "block";
+            break
+
+          case 6:
+            document.getElementById("Cooking").style.display = "block";
+            break
         }
-        else{
-            alert("Maximum of 3 choices allowed");
-        } 
+      }
     }
 
-    function submitChoices(){
-        for (i=0;i<myChoices.length;i++){
-                switch(myChoices[i]){
-                    case 1:
-                      document.getElementById("Sports").style.display = "block";
-                    break
 
-                    case 2:
-                      document.getElementById("Music").style.display = "block";  
-                    break
 
-                    case 3:
-                      document.getElementById("Reading").style.display = "block";
-                    break
-
-                    case 4:
-                      document.getElementById("History").style.display = "block";
-                    break
-
-                    case 5:
-                      document.getElementById("Gaming").style.display = "block";
-                    break
-
-                    case 6:
-                      document.getElementById("Cooking").style.display = "block";
-                    break
-            }
-        }
-    }
   </script>
 
 </head>
-{% if request.user.is_authenticated %}
+
+
 <body>
+  {% if request.user.is_authenticated %}
   <div id="background">
     <nav class="navbar">
       <a href="" class="logo">
@@ -71,47 +71,60 @@
       <ul class="nav-links">
         <li class="link-style" id="nav1"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
         <li class="link-style" id="nav2"><a href="{% url 'contact' %}">Contact</a></li>
-        {% if request.user.is_authenticated %}
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>
           <div class="dropdown-items">
+
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Sports">Sports</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Music">Music</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Reading">Reading</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="History">History</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Gaming">Gaming</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Cooking">Cooking</a>
+
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Sports">Sports</a>
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Music">Music</a>
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Reading">Reading</a>
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="History">History</a>
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Gaming">Gaming</a>
+            <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Cooking">Cooking</a>
+
           </div>
         </div>
+
         <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
         <li class="link-style" id="nav4"><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
-
-
+        <script>
+          window.location.href = "http://127.0.0.1:8000/home";
+        </script>
         <li class="link-style" id="nav5"><a href="{% url 'login' %}">Login</a></li>
         <li class="link-style" id="nav6"><a href="{% url 'signup' %}">Sign up</a></li>
         {% endif %}
       </ul>
     </nav>
   </div>
-  
 
-  
+
+
 
   <div class="mainblock">
 
-    
+
     <div class="options">
-        <p>Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made available to you and other likeminded users.</p>
-        <a href="../../template/rooms/room.html" onclick="changeTitle(this)">Click me to change the title</a>
-        <input type="submit" onClick="submitChoices()"></input>
-        <p id="output"></p>
-        <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
-        <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
-        <div id="opt3" class="option" onClick="addChoice(3)">Reading</div>
-        <div id="opt4" class="option" onClick="addChoice(4)">History</div>
-        <div id="opt5" class="option" onClick="addChoice(5)">Gaming</div>
-        <div id="opt6" class="option" onClick="addChoice(6)">Cooking</div> 
+      <div>
+        <p class="welcome">Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made
+          available to you and other likeminded users.</p>
+      </div>
+
+      <input type="submit" onClick="submitChoices()" class="submitButton"></input>
+      <p id="output"></p>
+      <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
+      <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
+      <div id="opt3" class="option" onClick="addChoice(3)">Reading</div>
+      <div id="opt4" class="option" onClick="addChoice(4)">History</div>
+      <div id="opt5" class="option" onClick="addChoice(5)">Gaming</div>
+      <div id="opt6" class="option" onClick="addChoice(6)">Cooking</div>
     </div>
   </div>
 
@@ -121,11 +134,8 @@
       2023.
     </p>
   </footer>
-  {% else %}
-  <script>
-    window.location.href = "http://127.0.0.1:8000/home";
-  </script>
-  {% endif %}
+
+  
 </body>
 
 </html>
