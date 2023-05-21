@@ -12,11 +12,16 @@
   <script>
    var myChoices = [];
 
+   function changeTitle(link) {
+      var pageTitle = link.innerHTML;
+      document.title = pageTitle;
+    }
 
     function addChoice(i){
 
         if(myChoices.length<3){
             myChoices.push(i);
+            document.getElementById("output").innerHTML = myChoices;
             return myChoices;
         }
         else{
@@ -53,9 +58,6 @@
             }
         }
     }
-
-    
-
   </script>
 
 </head>
@@ -73,21 +75,12 @@
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>
           <div class="dropdown-items">
-
-            <a href="{% url 'room' %}" class="rooms" id="Sports">Sports</a>
-            <a href="{% url 'room' %}" class="rooms" id="Music">Music</a>
-            <a href="{% url 'room' %}" class="rooms" id="Reading">Reading</a>
-            <a href="{% url 'room' %}" class="rooms" id="History">History</a>
-            <a href="{% url 'room' %}" class="rooms" id="Gaming">Gaming</a>
-            <a href="{% url 'room' %}" class="rooms" id="Cooking">Cooking</a>
-
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Sports">Sports</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Music">Music</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Reading">Reading</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="History">History</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Gaming">Gaming</a>
             <a href="http://127.0.0.1:8000/home/room" class="rooms" id="Cooking">Cooking</a>
-
           </div>
         </div>
         <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
@@ -112,11 +105,9 @@
 
     
     <div class="options">
-      <div>
-        <p class="welcome">Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made available to you and other likeminded users.</p>
-      </div>
-        
-        <input type="submit" onClick="submitChoices()" class="submitButton"></input>
+        <p>Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made available to you and other likeminded users.</p>
+        <a href="../../template/rooms/room.html" onclick="changeTitle(this)">Click me to change the title</a>
+        <input type="submit" onClick="submitChoices()"></input>
         <p id="output"></p>
         <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
         <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
