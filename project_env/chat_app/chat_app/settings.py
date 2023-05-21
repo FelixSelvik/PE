@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGOUT_REDIRECT_URL = '/home'
-LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/home/room/'
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/choices/'
 LOGIN_URL = '/login'
 
 # Application definition
