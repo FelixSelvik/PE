@@ -12,51 +12,32 @@
   <script>
     var myChoices = [];
 
-
-    function addChoice(i) {
-
+    function showRoom(roomId) {
+      var roomElement = document.getElementById(roomId);
       if (myChoices.length < 3) {
-        myChoices.push(i);
-        return myChoices;
+        if (!myChoices.includes(roomId)) {
+          roomElement.style.display = "block";
+          myChoices.push(roomId);
+          document.getElementById(opt1).style.backgroundColor = "green";
+        }
+        else {
+          roomElement.style.display = "none";
+          var index = myChoices.indexOf(roomId);
+          if (index > -1) {
+            myChoices.splice(index, 1);
+          }
+        }
       }
-      else {
-        alert("Maximum of 3 choices allowed");
-      }
-    }
-
-    function submitChoices() {
-      for (i = 0; i < myChoices.length; i++) {
-        switch (myChoices[i]) {
-          case 1:
-            document.getElementById("Sports").style.display = "block";
-            break
-
-          case 2:
-            document.getElementById("Music").style.display = "block";
-            break
-
-          case 3:
-            document.getElementById("Reading").style.display = "block";
-            break
-
-          case 4:
-            document.getElementById("History").style.display = "block";
-            break
-
-          case 5:
-            document.getElementById("Gaming").style.display = "block";
-            break
-
-          case 6:
-            document.getElementById("Cooking").style.display = "block";
-            break
+      else if (myChoices.includes(roomId)) {
+        roomElement.style.display = "none";
+        var index = myChoices.indexOf(roomId);
+        if (index > -1) {
+          myChoices.splice(index, 1);
         }
       }
     }
-
-
-
   </script>
+
 
 </head>
 
@@ -74,7 +55,6 @@
         <div class="dropdown-div">
           <button class="drop-button">Rooms</button>
           <div class="dropdown-items">
-
             <a href="http://127.0.0.1:8000/home/room#Sports" class="rooms" id="Sports">Sports</a>
             <a href="http://127.0.0.1:8000/home/room#Music" class="rooms" id="Music">Music</a>
             <a href="http://127.0.0.1:8000/home/room#Reading" class="rooms" id="Reading">Reading</a>
@@ -82,6 +62,7 @@
             <a href="http://127.0.0.1:8000/home/room#Gaming" class="rooms" id="Gaming">Gaming</a>
             <a href="http://127.0.0.1:8000/home/room#Cooking" class="rooms" id="Cooking">Cooking</a>
           </div>
+
         </div>
 
         <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
@@ -109,14 +90,14 @@
           available to you and other likeminded users.</p>
       </div>
 
-      <input type="submit" onClick="submitChoices()" class="submitButton"></input>
       <p id="output"></p>
-      <div id="opt1" class="option" onClick="addChoice(1)">Sports</div>
-      <div id="opt2" class="option" onClick="addChoice(2)">Music</div>
-      <div id="opt3" class="option" onClick="addChoice(3)">Reading</div>
-      <div id="opt4" class="option" onClick="addChoice(4)">History</div>
-      <div id="opt5" class="option" onClick="addChoice(5)">Gaming</div>
-      <div id="opt6" class="option" onClick="addChoice(6)">Cooking</div>
+      <div id="opt1" class="option" onclick="showRoom('Sports')">Sports</div>
+      <div id="opt2" class="option" onclick="showRoom('Music')">Music</div>
+      <div id="opt3" class="option" onclick="showRoom('Reading')">Reading</div>
+      <div id="opt4" class="option" onclick="showRoom('History')">History</div>
+      <div id="opt5" class="option" onclick="showRoom('Gaming')">Gaming</div>
+      <div id="opt6" class="option" onclick="showRoom('Cooking')">Cooking</div>
+
     </div>
   </div>
 
@@ -126,7 +107,7 @@
       2023.
     </p>
   </footer>
-  
+
 </body>
 
 </html>
