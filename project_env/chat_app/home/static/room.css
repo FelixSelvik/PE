@@ -97,7 +97,6 @@ nav{
 .dropdown-items{
     display:none;
     position:absolute;
-    background-color:#282b4a;
     z-index:1;
     padding-top:14%;
     margin-left:43px;
@@ -121,6 +120,8 @@ nav{
 .rooms{
     display:block;
     padding:15px;
+    background-color:#42488b;
+    text-align: center;
 }
 
 .containers{

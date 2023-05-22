@@ -11,38 +11,34 @@
 </head>
 
 <body>
+    {% if request.user.is_authenticated %}
     <div id="background">
         <nav class="navbar">
-            <a href="http://127.0.0.1:8000/choices" class="logo">
-                <img src="../../static/images/logo.png" alt="logo" class="icon">
+            <a href="http://127.0.0.1:8000/choices/" class="logo">
+              <img src="../../static/images/logo.png" alt="logo" class="icon">
             </a>
             <ul class="nav-links">
-                {% if request.user.is_authenticated %}
-                <div class="dropdown-div">
-                    <button class="drop-button">Rooms</button>
-                    <div class="dropdown-items">
-                        <a href="http://127.0.0.1:8000/home/room#Sports" class="rooms" id="Sports">Sports</a>
-                        <a href="http://127.0.0.1:8000/home/room#Music" class="rooms" id="Music">Music</a>
-                        <a href="http://127.0.0.1:8000/home/room#Reading" class="rooms" id="Reading">Reading</a>
-                        <a href="http://127.0.0.1:8000/home/room#History" class="rooms" id="History">History</a>
-                        <a href="http://127.0.0.1:8000/home/room#Gaming" class="rooms" id="Gaming">Gaming</a>
-                        <a href="http://127.0.0.1:8000/home/room#Cooking" class="rooms" id="Cooking">Cooking</a>
-                    </div>
+              <li class="link-style" id="nav1"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+              <li class="link-style" id="nav2"><a href="{% url 'contact' %}">Contact</a></li>
+              <div class="dropdown-div">
+                <button class="drop-button">Rooms</button>
+                <div class="dropdown-items">
+                  <a href="http://127.0.0.1:8000/home/room#Sports" class="rooms" id="Sports">Sports</a>
+                  <a href="http://127.0.0.1:8000/home/room#Music" class="rooms" id="Music">Music</a>
+                  <a href="http://127.0.0.1:8000/home/room#Reading" class="rooms" id="Reading">Reading</a>
+                  <a href="http://127.0.0.1:8000/home/room#History" class="rooms" id="History">History</a>
+                  <a href="http://127.0.0.1:8000/home/room#Gaming" class="rooms" id="Gaming">Gaming</a>
+                  <a href="http://127.0.0.1:8000/home/room#Cooking" class="rooms" id="Cooking">Cooking</a>
                 </div>
-                <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
-                <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
-                <li class="username"><a href="">{{ user.username }}</a></li>
-                <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
-                {% else %}
-
-
-                <li class="link-style"><a href="{% url 'login' %}">Login</a></li>
-                <li class="link-style"><a href="{% url 'signup' %}">Sign up</a></li>
-                {% endif %}
+      
+              </div>
+      
+              <li class="username" id="nav3"><a href="">{{ user.username }}</a></li>
+              <li class="link-style" id="nav4"><a href="{% url 'logout' %}">Log out</a></li>
             </ul>
-        </nav>
+          </nav>
     </div>
-    {% if request.user.is_authenticated %}
+    
     <div class="mainblock">
 
         <div class="welcome">
@@ -69,11 +65,9 @@
 
     </div>
     {% else %}
-
     <script>
         window.location.href = "http://127.0.0.1:8000/home";
     </script>
-
     {% endif %}
 
     <footer>
