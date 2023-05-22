@@ -60,9 +60,11 @@
 
         <script type="text/javascript">
             const userName = '{{ user.username }}';
-
-            var chatname = ''; // Declare a global variable to store chatname
-
+            var chatname = '';
+            document.title = window.location.hash.replace('#','');
+            chatname = document.title;
+            const roomNameElement = document.getElementById('room-name');
+            roomNameElement.textContent = chatname;
             document.addEventListener("DOMContentLoaded", function () {
                 var myLinks = document.getElementsByClassName("rooms");
                 for (var i = 0; i < myLinks.length; i++) {
