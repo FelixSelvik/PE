@@ -18,7 +18,6 @@
         if (!myChoices.includes(roomId)) {
           roomElement.style.display = "block";
           myChoices.push(roomId);
-          document.getElementById(opt1).style.backgroundColor = "green";
         }
         else {
           roomElement.style.display = "none";
@@ -91,12 +90,13 @@
       </div>
 
       <p id="output"></p>
-      <div id="opt1" class="option" onclick="showRoom('Sports')">Sports</div>
-      <div id="opt2" class="option" onclick="showRoom('Music')">Music</div>
-      <div id="opt3" class="option" onclick="showRoom('Reading')">Reading</div>
-      <div id="opt4" class="option" onclick="showRoom('History')">History</div>
-      <div id="opt5" class="option" onclick="showRoom('Gaming')">Gaming</div>
-      <div id="opt6" class="option" onclick="showRoom('Cooking')">Cooking</div>
+      <div id="opt1" class="option" onclick="showRoom('Sports'); if (myChoices.includes('Sports')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Sports</div>
+      <div id="opt2" class="option" onclick="showRoom('Music'); if (myChoices.includes('Music')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Music</div>
+      <div id="opt3" class="option" onclick="showRoom('Reading'); if (myChoices.includes('Reading')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Reading</div>
+      <div id="opt4" class="option" onclick="showRoom('History'); if (myChoices.includes('History')) {this.style.background = 'blue'} else {this.style.background = 'red'};">History</div>
+      <div id="opt5" class="option" onclick="showRoom('Gaming'); if (myChoices.includes('Gaming')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Gaming</div>
+      <div id="opt6" class="option" onclick="showRoom('Cooking'); if (myChoices.includes('Cooking')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Cooking</div>
+      
 
     </div>
   </div>

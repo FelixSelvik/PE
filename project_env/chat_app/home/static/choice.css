@@ -43,56 +43,12 @@
 .submitButton:hover{
     background-color: #5721c2;
 }
-#opt1{
-    background-color:rgb(62, 138, 196);
-}
 
-#opt1:hover{
-    background-color:rgb(108, 164, 206);
-}
-
-#opt2{
-    background-color:rgb(62, 196, 194);
-}
-
-#opt2:hover{
-    background-color:rgb(113, 188, 187);
-}
-
-#opt3{
-    background-color:rgb(62, 196, 151);
-}
-
-#opt3:hover{
-    background-color:rgb(102, 192, 162);
-}
-
-#opt4{
-    background-color:rgb(62, 196, 64);
-}
-
-#opt4:hover{
-    background-color:rgb(105, 189, 107);
-}
-
-#opt5{
-    background-color:rgb(172, 196, 62);
-}
-
-#opt5:hover{
-    background-color:rgb(181, 197, 108);
-}
-
-#opt6{
-    background-color:rgb(196, 142, 62);
-}
-
-#opt6:hover{
-    background-color:rgb(194, 163, 117);
+.option{
+    background-color:red;
 }
 
 .option:hover{
-    background-color:rgb(148, 203, 245);
     cursor: pointer;
 }
 
