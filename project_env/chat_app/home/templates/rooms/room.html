@@ -8,9 +8,22 @@
     <link rel="stylesheet" type="text/css" href="../../static/room.css">
     <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
     <script type="text/javascript" src="../../static/js/keyGenerator.js" defer></script>
+
+    <script>
+
+        function pullChoices(){
+            var storedChoices = [];
+            storedChoices = JSON.parse(localStorage.getItem("roomChoices"));
+
+            for(i=0;i<=storedChoices.length;i++){
+                document.write(storedChoices[i]);
+            }
+        }
+        
+    </script>
 </head>
 
-<body>
+<body onload="pullChoices()">
     <div id="background">
         <nav class="navbar">
             <a href="http://127.0.0.1:8000/choices" class="logo">

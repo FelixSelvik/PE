@@ -5,6 +5,10 @@ h1{
     
 }
 
+#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
+    display:none;
+}
+
 body{
     margin: 0;
     width: 100%; 
