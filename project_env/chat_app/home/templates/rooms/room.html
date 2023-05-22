@@ -8,6 +8,35 @@
     <link rel="stylesheet" type="text/css" href="../../static/room.css">
     <link rel="icon" type="image/ico" href="../../static/images/favicon.ico">
     <script type="text/javascript" src="../../static/js/keyGenerator.js" defer></script>
+
+    <script>
+        var myChoices = [];
+    
+        function showRoom(roomId) {
+          var roomElement = document.getElementById(roomId);
+          if (myChoices.length < 3) {
+            if (!myChoices.includes(roomId)) {
+              roomElement.style.display = "block";
+              myChoices.push(roomId);
+            }
+            else {
+              roomElement.style.display = "none";
+              var index = myChoices.indexOf(roomId);
+              if (index > -1) {
+                myChoices.splice(index, 1);
+              }
+            }
+          }
+          else if (myChoices.includes(roomId)) {
+            roomElement.style.display = "none";
+            var index = myChoices.indexOf(roomId);
+            if (index > -1) {
+              myChoices.splice(index, 1);
+            }
+          }
+        }
+      </script>
+
 </head>
 
 <body>
@@ -40,6 +69,25 @@
     </div>
     
     <div class="mainblock">
+
+        <div>
+            <p class="info">Welcome, now you can choose up to 3 topics that interest you. These rooms will then be made
+              available to you and other likeminded users.</p>
+          </div>
+          
+        <div class="options">
+            
+      
+            <p id="output"></p>
+            <div id="opt1" class="option" onclick="showRoom('Sports'); if (myChoices.includes('Sports')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Sports</div>
+            <div id="opt2" class="option" onclick="showRoom('Music'); if (myChoices.includes('Music')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Music</div>
+            <div id="opt3" class="option" onclick="showRoom('Reading'); if (myChoices.includes('Reading')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Reading</div>
+            <div id="opt4" class="option" onclick="showRoom('History'); if (myChoices.includes('History')) {this.style.background = 'blue'} else {this.style.background = 'red'};">History</div>
+            <div id="opt5" class="option" onclick="showRoom('Gaming'); if (myChoices.includes('Gaming')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Gaming</div>
+            <div id="opt6" class="option" onclick="showRoom('Cooking'); if (myChoices.includes('Cooking')) {this.style.background = 'blue'} else {this.style.background = 'red'};">Cooking</div>
+            
+      
+          </div>
 
         <div class="welcome">
             <p id="room-name">Name of the room</p>

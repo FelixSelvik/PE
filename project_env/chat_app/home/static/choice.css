@@ -289,10 +289,6 @@ span {
     margin-right:auto;
 }
 
-.welcome p{
-    margin-bottom: 0%;
-}
-
 .mainblock{
     display:flex;
     justify-content:center;
@@ -303,6 +299,10 @@ span {
 
 .option{
     background-color:red;
+}
+
+.welcome p{
+    margin-bottom: 0%;
 }
 
 .option{

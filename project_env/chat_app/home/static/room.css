@@ -291,9 +291,48 @@ p{
     margin-right:auto;
 }
 
+#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
+    display:none;
+}
+
+.option{
+    background-color:red;
+}
+
 .welcome p{
     margin-bottom: 0%;
 }
 
+.options{
+    display:flex;
+    justify-content:center;
+}
+
+.option{
+
+    width:80px;
+    padding:15px;
+    margin:20px;
+    font-size:20px;
+    border-radius:10px;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.option:hover{
+    cursor: pointer;
+}
+
+.info{
+    font-size:20px;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:800px;
+    background-color:#42488b;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:10px;
+    padding:5px;
+}
 
 
