@@ -32,8 +32,12 @@ def signup(request):
 
   return render(request, 'registration/signup.html', {'form':form})
 
-def room(request, room_name):
-  return render(request, "rooms/room.html", {"room_name": room_name})
+def room(request):
+  return render(request, "rooms/room.html")
+
+def change_title(request):
+    new_title = request.GET.get('title', 'Default Title')
+    return render(request, 'index.html', {'title': new_title})
 
 def contact(request):
     if request.method == "POST":

@@ -10,5 +10,5 @@ urlpatterns = [
   path('choices/', views.choices, name="choices"),
   path('signup/', views.signup, name="signup"),
   path('logout/', auth_views.LogoutView.as_view(), name="logout"),
-  path("<str:room_name>/", views.room, name="room"),
+  path("room/", views.room, name="room"),
 ]
