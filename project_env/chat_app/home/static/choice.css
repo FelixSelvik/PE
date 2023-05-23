@@ -1,65 +1,9 @@
-.options{
-    width:700px;
-    
-}
-
-#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
-    display:none;
-}
-
-
-.option{
-    width:auto;
-    padding:15px;
-    margin:20px;
-    font-size:40px;
-    border-radius:10px;
+h1{
     text-align:center;
-}
-
-.welcome{
-    background-color:#282b4a;
-    font-size:20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius:10px;
     color:white;
-    padding:10px;
-    text-align:center;
-}
-
-.submitButton{
-    width:100px;
-    padding:5px;
-    margin-left:300px;
-    text-align:center;
-    background-color: white;
-    border:2px solid #282b4a;
-    border-radius:10px;
-    font-size:20px;
-    cursor:pointer;
+    padding-top: 200px;
     
 }
-
-.submitButton:hover{
-    background-color: #5721c2;
-}
-
-.option{
-    background-color:red;
-}
-
-.option:hover{
-    cursor: pointer;
-}
-
-.mainblock{
-    display:flex;
-    justify-content:center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-width: 0;
-    min-height: fit-content;
-}
-
 
 body{
     margin: 0;
@@ -74,12 +18,16 @@ body{
     background-color:#8c70c6;
 }
 
+.mainblock{
+    margin: auto 0;
+    margin-bottom: 1%;
+    text-align:center;
+}
 
 ul{
     list-style-type:none;
     font-size:30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a:link{
@@ -94,7 +42,7 @@ a:visited{
 
 a:hover{
     text-decoration: none;
-    color:#c393eb;
+    color:blueviolet;
 }
 
 a:active{
@@ -120,7 +68,6 @@ a:active{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:90px;
 }
 
 nav{
@@ -150,7 +97,6 @@ nav{
 .dropdown-items{
     display:none;
     position:absolute;
-    background-color:#282b4a;
     z-index:1;
     padding-top:14%;
     margin-left:43px;
@@ -165,9 +111,78 @@ nav{
     display:block;
 }
 
+
 .dropdown-div{
     position:relative;
     display:block;
+}
+
+.rooms{
+    display:block;
+    padding:15px;
+    background-color:#42488b;
+    text-align: center;
+}
+
+.containers{
+    text-align:center;
+    width:400px;
+    background-color:#282b4a;
+    margin-left:40px;
+    margin-right:40px;
+    border-radius:5px;
+    padding:15px;
+    margin-bottom:20px;
+    
+}
+
+.contents{
+    text-align:center;
+    width:400px;
+    background-color:#282b4a;
+    margin-left:40px;
+    margin-right:40px;
+    border-radius:5px;
+    padding:15px;
+}
+
+textarea {
+    resize: none;
+    background-color:black;
+    color: white;
+}
+
+#chat-message-input {
+    border-radius:10px;
+    width:530px;
+    margin-top:10px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+.button {
+    padding-left: 1%;
+    padding-right: 1%;
+    color: white;
+    border-radius:10px;
+    background-color:#42488b;
+    border-color: black;
+    border-style: solid;
+}
+
+.button:hover{
+    background-color:white;
+    color: blueviolet;
+}
+
+input, textarea{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+}
+
+label {
+    color: white;
+    font-weight: bold;
 }
 
 footer {
@@ -175,4 +190,135 @@ footer {
     color: white;
     margin-top: auto;
     text-align: center;
+}
+
+footer a {
+    font-style: italic;
+}
+
+
+.messagebox{
+       width:600px;
+       height:400px;
+       background-color:#282b4a;
+       margin:auto;
+       border:2px solid #42488b;
+       border-radius:10px;
+}
+
+.messageinput{
+    border:2px solid #42488b;
+    border-radius:10px;
+    width:530px;
+    margin-top:20px;
+}
+
+.sendbutton{
+    border:2px solid #42488b;
+    border-radius:10px;
+}
+
+.User1{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background-color:green;
+    width:auto;
+    border-radius:10px;
+    margin:5px;
+    max-width:200px;
+    text-align:left;
+    padding:10px;
+}
+
+.User2{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background-color:rgb(0, 81, 255);
+    width:auto;
+    border-radius:10px;
+    margin:5px;
+    margin-left:375px;
+    max-width:200px;
+    text-align:left;
+    padding:10px;
+}
+
+.User1Time{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:left;
+    margin-left:50px;
+    color: white;
+}
+
+.User2Time{
+    font: 1em/1.25em Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:right;
+    margin-right:50px;
+    color: white;
+}
+
+span {
+    font-weight: bold;
+}
+
+.messagebox{
+    overflow-y: auto;
+}
+
+
+.welcome{
+    background-color:#282b4a;
+    font-size:20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius:10px;
+    color:white;
+    padding:10px;
+    text-align:center;
+    margin-bottom: 5%;
+}
+
+.welcome2{
+    font-size:20px;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.welcome p{
+    margin-bottom: 0%;
+}
+
+.mainblock{
+    display:flex;
+    justify-content:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 0;
+    min-height: fit-content;
+}
+
+.option{
+    background-color:red;
+}
+
+.option{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    width:200px;
+    padding:15px;
+    font-size:40px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.option:hover{
+    cursor: pointer;
+}
+
+#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
+    display:none;
 }

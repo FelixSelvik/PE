@@ -140,9 +140,10 @@ nav{
 
 input, textarea{
     width:60%;
-    margin-top:40px;
+    margin-top:25px;
     margin-bottom:20px;
     font-size:30px;
+    border-radius:10px;
 }
 
 textarea{
@@ -165,6 +166,7 @@ input:focus::placeholder {
     margin-top:40px;
     margin-bottom:40px;
     min-width: fit-content;
+    border-radius:10px;
 }
 
 .submit-button:hover{

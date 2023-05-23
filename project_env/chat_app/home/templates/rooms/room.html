@@ -11,15 +11,25 @@
 
     <script>
 
-        function pullChoices(){
-            var storedChoices = [];
-            storedChoices = JSON.parse(localStorage.getItem("roomChoices"));
+        function pullChoices() {
+            var storedChoices = JSON.parse(localStorage.getItem("userRooms"));
 
-            for(i=0;i<=storedChoices.length;i++){
-                document.write(storedChoices[i]);
+            for (i = 0; i < storedChoices.length; i++) {
+
+            }
+            var containerElement = document.querySelector(".dropdown-items");
+            var childElements = containerElement.children;
+            for (var i = 0; i < childElements.length; i++) {
+                var element = childElements[i];
+                if (!storedChoices.includes(element.id)) {
+                    element.style.display = "none";
+                } else {
+                    element.style.display = "block";
+                }
             }
         }
-        
+
+
     </script>
 </head>
 
@@ -31,6 +41,9 @@
             </a>
             <ul class="nav-links">
                 {% if request.user.is_authenticated %}
+                
+                <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
+                <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
                 <div class="dropdown-div">
                     <button class="drop-button">Rooms</button>
                     <div class="dropdown-items">
@@ -42,8 +55,6 @@
                         <a href="http://127.0.0.1:8000/home/room#Cooking" class="rooms" id="Cooking">Cooking</a>
                     </div>
                 </div>
-                <li class="link-style"><a href="https://github.com/FelixSelvik/PE">Github</a></li>
-                <li class="link-style"><a href="{% url 'contact' %}">Contact</a></li>
                 <li class="username"><a href="">{{ user.username }}</a></li>
                 <li class="link-style"><a href="{% url 'logout' %}">Log out</a></li>
                 {% else %}

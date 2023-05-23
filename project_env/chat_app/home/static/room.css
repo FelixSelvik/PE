@@ -5,10 +5,6 @@ h1{
     
 }
 
-#Sports, #Music,#Reading,#History,#Gaming,#Cooking{
-    display:none;
-}
-
 body{
     margin: 0;
     width: 100%; 
@@ -23,7 +19,7 @@ body{
 }
 
 .mainblock{
-    margin: auto 0;
+    margin-top:5%;
     margin-bottom: 1%;
     text-align:center;
 }
@@ -101,7 +97,6 @@ nav{
 .dropdown-items{
     display:none;
     position:absolute;
-    background-color:#282b4a;
     z-index:1;
     padding-top:14%;
     margin-left:43px;
@@ -125,6 +120,8 @@ nav{
 .rooms{
     display:block;
     padding:15px;
+    background-color:#42488b;
+    text-align: center;
 }
 
 .containers{

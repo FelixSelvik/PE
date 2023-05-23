@@ -143,6 +143,7 @@ input{
     margin-top:40px;
     margin-bottom:20px;
     font-size:30px;
+    border-radius:10px;
 }
 
 input:focus::placeholder {
@@ -160,6 +161,7 @@ input:focus::placeholder {
     margin-top:40px;
     margin-bottom:40px;
     min-width: fit-content;
+    border-radius:10px;
 }
 
 .submit-button:hover{
